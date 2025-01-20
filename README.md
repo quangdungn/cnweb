@@ -39,4 +39,57 @@ Sử dụng Seeder để sinh dữ liệu minh họa với Faker (50 bản ghi)
 
 Đầy đủ chức năng CRUD
 
+---
+
 ## 2. Cách cài đặt
+
+Trước tiên, bạn cần clone repository từ GitHub:
+
+```bash
+git clone https://github.com/quangdungn/cnweb.git
+```
+
+Sau đó, di chuyển vào thư mục dự án:
+```bash
+cd cnweb
+```
+
+---
+Cài đặt Composer.
+```bash
+composer install
+```
+
+---
+Copy file mẫu `.env.example` thành `.env`:
+```bash
+cp .env.example .env
+```
+
+Mở file `.env` và cấu hình các thông tin như:
+  ```php
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=laravel_db
+  DB_USERNAME=root
+  DB_PASSWORD=your_password
+```
+---
+Chạy migration để tạo bảng:
+```bash
+php artisan migrate
+```
+
+Chạy seeder để sinh dữ liệu:
+```bash
+php artisan db:seed --class ClassesTableSeeder
+php artisan db:seed --class StudentsTableSeeder
+```
+
+---
+Khởi động server Laravel:
+```bash
+php artisan serve
+```
+Mở trình duyệt và truy cập vào [http://localhost:8000](http://localhost:8000).
